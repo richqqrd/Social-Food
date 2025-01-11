@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Social Food</string>
+    <string name="take_photo">Foto aufnehmen</string>
+    <string name="follow">Folgen</string>
+    <string name="unfollow">Entfolgen</string>
+    <string name="posts_count">Beiträge: %d</string>
+    <string name="followers_count">Follower: %d</string>
+    <string name="post_creation_success">Post erfolgreich erstellt!</string>
+    <string name="post_creation_error">Fehler beim Erstellen des Posts</string>
+    <string name="location_permission_required">Standortberechtigung wird benötigt</string>
+    <string name="settings">Einstellungen</string>
+    <string name="no_location_available">Kein Standort verfügbar. Bitte GPS aktivieren.</string>
+    <string name="location_error">Fehler beim Abrufen des Standorts</string>
+    <string name="ingredients_format">Zutaten:\n%s</string>
+    <string name="recipe_format">Rezept:\n%s</string>
+    <string name="error_empty_fields">Bitte alle Felder ausfüllen</string>
+    <string name="error_invalid_credentials">Ungültige Anmeldedaten</string>
+    <string name="error_password_mismatch">Passwörter stimmen nicht überein</string>
+    <string name="error_username_taken">Benutzername bereits vergeben</string>
+    <string name="registration_success">Registrierung erfolgreich!</string>
+</resources>

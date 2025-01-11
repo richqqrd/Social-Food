@@ -1,0 +1,23 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_camera_container">
+
+    <!-- Kamera-Vorschau -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Aufnahme-Button -->
+    <ImageButton
+        android:id="@+id/capture_button"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="32dp"
+        android:background="@drawable/ic_shutter_button"
+        android:contentDescription="@string/take_photo"
+        android:scaleType="centerCrop" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,55 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Allgemeine Einstellungen -->
+    <PreferenceCategory android:title="Allgemeine Einstellungen">
+        <SwitchPreferenceCompat
+            android:key="notifications"
+            android:title="Push-Benachrichtigungen"
+            android:summary="Aktivieren oder deaktivieren"
+            android:defaultValue="true" />
+        <ListPreference
+            android:key="language"
+            android:title="Sprache"
+            android:summary="App-Sprache ändern"
+            android:entries="@array/languages"
+            android:entryValues="@array/languages_values"
+            android:defaultValue="de" />
+    </PreferenceCategory>
+
+    <!-- Profilbezogene Einstellungen -->
+    <PreferenceCategory android:title="Profil">
+        <Preference
+            android:key="edit_profile"
+            android:title="Profil bearbeiten"
+            android:summary="Benutzername, Bild und Bio ändern" />
+        <Preference
+            android:key="privacy"
+            android:title="Datenschutzeinstellungen"
+            android:summary="Steuern, wer Ihre Beiträge sehen kann" />
+    </PreferenceCategory>
+
+    <!-- Sicherheits- und Datenschutzoptionen -->
+    <PreferenceCategory android:title="Datenschutz &amp; Sicherheit">
+        <Preference
+            android:key="clear_data"
+            android:title="Daten löschen"
+            android:summary="Alle gespeicherten Daten löschen" />
+        <Preference
+            android:key="account_delete"
+            android:title="Konto löschen"
+            android:summary="Löschen Sie Ihr Benutzerkonto" />
+    </PreferenceCategory>
+
+    <!-- Über die App -->
+    <PreferenceCategory android:title="Über die App">
+        <Preference
+            android:key="feedback"
+            android:title="Feedback senden"
+            android:summary="Senden Sie uns Ihre Meinung" />
+        <Preference
+            android:key="about"
+            android:title="Über die App"
+            android:summary="Version und Informationen" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
