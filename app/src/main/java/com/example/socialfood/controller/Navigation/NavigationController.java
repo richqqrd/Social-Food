@@ -1,5 +1,7 @@
 package com.example.socialfood.controller.Navigation;
 
+import com.example.socialfood.controller.Post.PostControllerInterface;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.content.Context;
 import android.view.MenuItem;
@@ -27,26 +29,28 @@ import org.osmdroid.views.overlay.Marker;
 import java.util.List;
 
 /**
- * Controller class responsible for handling navigation between different views in the application.
+ * Controller class responsible for handling navigation between different views
+ * in the application.
  * Manages fragment transactions and view transitions.
  */
-public class NavigationController extends BaseController implements com.example.socialfood.controller.Navigation.NavigationControllerInterface {
+public class NavigationController extends BaseController
+        implements com.example.socialfood.controller.Navigation.NavigationControllerInterface {
     private final FragmentManager fragmentManager;
-    private PostController postController;
-    private UserController userController;
+    private PostControllerInterface postController;
+    private UserControllerInterface userController;
     private final BottomNavigationView bottomNavigation;
 
     /**
      * Constructor for NavigationController
      * 
-     * @param context Application context
-     * @param fragmentManager FragmentManager for handling fragment transactions
-     * @param postController Controller for post-related operations
-     * @param userController Controller for user-related operations
+     * @param context          Application context
+     * @param fragmentManager  FragmentManager for handling fragment transactions
+     * @param postController   Controller for post-related operations
+     * @param userController   Controller for user-related operations
      * @param bottomNavigation Bottom navigation view for main navigation
      */
     public NavigationController(Context context, FragmentManager fragmentManager,
-            PostController postController, UserController userController,
+            PostControllerInterface postController, UserControllerInterface userController,
             BottomNavigationView bottomNavigation) {
         super(context);
         this.fragmentManager = fragmentManager;
@@ -112,7 +116,8 @@ public class NavigationController extends BaseController implements com.example.
     }
 
     /**
-     * Shows the settings screen by replacing the current fragment with SettingsFragment
+     * Shows the settings screen by replacing the current fragment with
+     * SettingsFragment
      */
     @Override
     public void showSettings() {
@@ -120,7 +125,8 @@ public class NavigationController extends BaseController implements com.example.
     }
 
     /**
-     * Shows the map view with all available posts Retrieves all posts from the database and
+     * Shows the map view with all available posts Retrieves all posts from the
+     * database and
      * displays them on the map
      */
     @Override
@@ -131,7 +137,8 @@ public class NavigationController extends BaseController implements com.example.
     }
 
     /**
-     * Shows the camera view for taking photos Sets up the camera callback to handle captured photos
+     * Shows the camera view for taking photos Sets up the camera callback to handle
+     * captured photos
      */
     @Override
     public void showCamera() {
@@ -141,7 +148,8 @@ public class NavigationController extends BaseController implements com.example.
     }
 
     /**
-     * Shows the detailed view of a post Retrieves the full post data and displays it in
+     * Shows the detailed view of a post Retrieves the full post data and displays
+     * it in
      * PostDetailFragment
      *
      * @param post The post to show details for
@@ -160,7 +168,8 @@ public class NavigationController extends BaseController implements com.example.
     }
 
     /**
-     * Shows the post creation screen with a captured photo Creates a new PostCreationFragment and
+     * Shows the post creation screen with a captured photo Creates a new
+     * PostCreationFragment and
      * initializes it with the photo path
      *
      * @param photoPath The path to the captured photo that will be used in the post
@@ -175,7 +184,7 @@ public class NavigationController extends BaseController implements com.example.
     /**
      * Shows posts on the map by creating markers for each post location
      *
-     * @param posts List of posts to display on the map
+     * @param posts   List of posts to display on the map
      * @param mapView The MapView to add markers to
      */
     @Override

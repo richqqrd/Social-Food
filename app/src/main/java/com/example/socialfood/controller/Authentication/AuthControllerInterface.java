@@ -44,4 +44,24 @@ public interface AuthControllerInterface {
      * @return The current User entity, null if no user is logged in
      */
     User getCurrentUser();
-}
+
+    /**
+     * Validates the provided credentials and logs in the user if valid
+     *
+     * @param username The username of the user
+     * @param password The password of the user
+     * @return LoginResult object containing the result of the login attempt
+     */
+    LoginResult validateAndLogin(String username, String password);
+
+    /**
+     * Validates the provided credentials and registers the user if valid
+     *
+     * @param username The username for the new user
+     * @param password The password for the new user
+     * @return RegisterResult object containing the result of the registration attempt
+     */
+    RegisterResult validateAndRegister(String username, String password);
+
+
+    }

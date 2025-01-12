@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.model.entities.Post;
 
 import java.util.List;
@@ -20,10 +21,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     private final List<Post> posts;
     private final boolean isDetailView;
-    private final NavigationController navigationController;
+    private final NavigationControllerInterface navigationController;
 
     public PostAdapter(List<Post> posts, boolean isDetailView,
-            NavigationController navigationController) {
+            NavigationControllerInterface navigationController) {
         this.posts = posts;
         this.isDetailView = isDetailView;
         this.navigationController = navigationController;

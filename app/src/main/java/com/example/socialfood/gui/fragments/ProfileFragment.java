@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.databinding.FragmentProfileBinding;
 import com.example.socialfood.gui.adapters.PostAdapter;
 import com.example.socialfood.model.entities.Post;
@@ -25,16 +28,16 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding binding;
-    private NavigationController navigationController;
+    private NavigationControllerInterface navigationController;
     private User currentUser;
     private List<Post> usersPosts;
-    private UserController userController;
-    private PostController postController;
+    private UserControllerInterface userController;
+    private PostControllerInterface postController;
     private PostAdapter postAdapter;
 
     public static ProfileFragment newInstance(User user, List<Post> posts,
-            UserController userController, PostController postController,
-            NavigationController navigationController) {
+            UserControllerInterface userController, PostControllerInterface postController,
+            NavigationControllerInterface navigationController) {
         ProfileFragment fragment = new ProfileFragment();
         fragment.currentUser = user;
         fragment.usersPosts = posts;

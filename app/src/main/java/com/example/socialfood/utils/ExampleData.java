@@ -2,13 +2,15 @@ package com.example.socialfood.utils;
 
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.model.entities.User;
 
 public class ExampleData {
 
-    public static void populateDatabase(PostController postController,
-            UserController userController) {
+    public static void populateDatabase(PostControllerInterface postController,
+                                        UserControllerInterface userController) {
 
 
         // Test User 1 (Main)
@@ -108,7 +110,7 @@ public class ExampleData {
         userController.setCurrentUser(user1);
     }
 
-    private static void createTestPost(PostController postController,
+    private static void createTestPost(PostControllerInterface postController,
             String description, String recipe,
             String ingredients, double lat, double lon) {
         String photoPath = String.valueOf(R.drawable.food);

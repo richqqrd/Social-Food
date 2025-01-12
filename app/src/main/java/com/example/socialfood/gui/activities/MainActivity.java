@@ -6,8 +6,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.databinding.ActivityMainBinding;
 import com.example.socialfood.utils.ExampleData;
 import com.example.socialfood.utils.UserManager;
@@ -18,7 +21,7 @@ import com.example.socialfood.utils.UserManager;
  */
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-    private NavigationController navigationController;
+    private NavigationControllerInterface navigationController;
     public static final String EXTRA_SKIP_LOGIN = "skip_login";
 
     /**
@@ -75,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
      * NavigationController.
      */
     private void initializeControllers() {
-        UserController userController = new UserController(this, null, null);
-        PostController postController = new PostController(this, null, null, null, userController);
+        UserControllerInterface userController = new UserController(this, null, null);
+        PostControllerInterface postController = new PostController(this, null, null, null, userController);
 
         navigationController = new NavigationController(
                 this,

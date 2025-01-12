@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Authentication.AuthController;
+import com.example.socialfood.controller.Authentication.AuthControllerInterface;
 import com.example.socialfood.controller.Authentication.LoginResult;
 import com.example.socialfood.databinding.ActivityLoginBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -18,7 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
  */
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
-    private AuthController authController;
+    private AuthControllerInterface authController;
 
     /**
      * Initializes the activity, sets up view binding and controllers.
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setupClickListeners();
     }
 
-    public void setAuthController(AuthController authController) {
+    public void setAuthController(AuthControllerInterface authController) {
         this.authController = authController;
     }
 

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.socialfood.controller.BaseController;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.model.handler.CommentHandler;
 import com.example.socialfood.model.handler.LikeHandler;
 import com.example.socialfood.model.handler.PostHandler;
@@ -14,26 +15,29 @@ import com.example.socialfood.model.entities.User;
 import java.util.List;
 
 /**
- * Controller class for handling post-related operations. Implements PostControllerInterface and
- * extends BaseController. Manages creation, retrieval, updates and interactions with posts.
+ * Controller class for handling post-related operations. Implements
+ * PostControllerInterface and
+ * extends BaseController. Manages creation, retrieval, updates and interactions
+ * with posts.
  */
-public class PostController extends BaseController implements com.example.socialfood.controller.Post.PostControllerInterface {
+public class PostController extends BaseController
+        implements com.example.socialfood.controller.Post.PostControllerInterface {
     private final PostHandler postHandler;
     private final LikeHandler likeHandler;
     private final CommentHandler commentHandler;
-    private final UserController userController;
+    private final UserControllerInterface userController;
 
     /**
      * Constructs a new PostController
      *
-     * @param context Application context
-     * @param postHandler Handler for post operations, creates new if null
-     * @param likeHandler Handler for like operations, creates new if null
+     * @param context        Application context
+     * @param postHandler    Handler for post operations, creates new if null
+     * @param likeHandler    Handler for like operations, creates new if null
      * @param commentHandler Handler for comment operations, creates new if null
      * @param userController Controller for user operations
      */
     public PostController(Context context, PostHandler postHandler, LikeHandler likeHandler,
-            CommentHandler commentHandler, UserController userController) {
+            CommentHandler commentHandler, UserControllerInterface userController) {
         super(context);
         this.postHandler = postHandler != null ? postHandler : new PostHandler(context);
         this.likeHandler = likeHandler != null ? likeHandler : new LikeHandler(context);

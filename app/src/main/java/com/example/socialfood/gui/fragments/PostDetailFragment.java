@@ -17,8 +17,11 @@ import java.util.List;
 import com.bumptech.glide.Glide;
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.databinding.FragmentPostDetailBinding;
 import com.example.socialfood.gui.adapters.CommentsAdapter;
 import com.example.socialfood.model.entities.Comment;
@@ -27,23 +30,23 @@ import com.example.socialfood.model.entities.User;
 
 public class PostDetailFragment extends Fragment {
     private Post post;
-    private final NavigationController navigationController;
-    private final PostController postController;
-    private final UserController userController;
+    private final NavigationControllerInterface navigationController;
+    private final PostControllerInterface postController;
+    private final UserControllerInterface userController;
     private FragmentPostDetailBinding binding;
     private CommentsAdapter commentsAdapter;
 
     public static PostDetailFragment newInstance(Post post,
-            NavigationController navigationController, PostController postController,
-            UserController userController) {
+            NavigationControllerInterface navigationController, PostControllerInterface postController,
+            UserControllerInterface userController) {
         return new PostDetailFragment(post, navigationController, postController, userController);
     }
 
     private PostDetailFragment(
             Post post,
-            NavigationController navigationController,
-            PostController postController,
-            UserController userController) {
+            NavigationControllerInterface navigationController,
+            PostControllerInterface postController,
+            UserControllerInterface userController) {
         this.post = post;
         this.navigationController = navigationController;
         this.postController = postController;

@@ -40,7 +40,7 @@ public class AuthController extends BaseController implements AuthControllerInte
      * @param password The password to validate
      * @return LoginResult indicating the result of the operation
      */
-    public com.example.socialfood.controller.Authentication.LoginResult validateAndLogin(String username, String password) {
+    public LoginResult validateAndLogin(String username, String password) {
         if (!validateCredentials(username, password)) {
             return com.example.socialfood.controller.Authentication.LoginResult.EMPTY_FIELDS;
         }
@@ -59,7 +59,7 @@ public class AuthController extends BaseController implements AuthControllerInte
      * @param password The password to validate
      * @return RegisterResult indicating the result of the operation
      */
-    public com.example.socialfood.controller.Authentication.RegisterResult validateAndRegister(String username, String password) {
+    public RegisterResult validateAndRegister(String username, String password) {
         if (!validateCredentials(username, password)) {
             return com.example.socialfood.controller.Authentication.RegisterResult.EMPTY_FIELDS;
         }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.socialfood.R;
 import com.example.socialfood.controller.Authentication.AuthController;
+import com.example.socialfood.controller.Authentication.AuthControllerInterface;
 import com.example.socialfood.controller.Authentication.RegisterResult;
 import com.example.socialfood.databinding.ActivityUserCreationBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -15,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
  */
 public class UserCreationActivity extends AppCompatActivity {
     private ActivityUserCreationBinding binding;
-    private AuthController authController;
+    private AuthControllerInterface authController;
 
     /**
      * Initializes the activity, sets up view binding and controller.
@@ -38,7 +39,7 @@ public class UserCreationActivity extends AppCompatActivity {
      * 
      * @param authController The controller to be used for authentication operations
      */
-    public void setAuthController(AuthController authController) {
+    public void setAuthController(AuthControllerInterface authController) {
         this.authController = authController;
     }
 

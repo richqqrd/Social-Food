@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment;
 
 
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.databinding.FragmentMapBinding;
 import com.example.socialfood.model.entities.Post;
 
@@ -29,8 +31,8 @@ import java.util.List;
 public class MapFragment extends Fragment {
     private FragmentMapBinding binding;
     private MapView mapView;
-    private NavigationController navigationController;
-    private PostController postController;
+    private NavigationControllerInterface navigationController;
+    private PostControllerInterface postController;
     private List<Post> posts;
     private com.example.socialfood.gui.fragments.Map.MapManager mapManager;
     private LocationManager locationManager;
@@ -44,8 +46,8 @@ public class MapFragment extends Fragment {
      * @param posts The list of posts to display on the map
      * @return A new instance of MapFragment
      */
-    public static MapFragment newInstance(NavigationController navigationController,
-            PostController postController, List<Post> posts) {
+    public static MapFragment newInstance(NavigationControllerInterface navigationController,
+            PostControllerInterface postController, List<Post> posts) {
         return new MapFragment(navigationController, postController, posts);
     }
 
@@ -56,7 +58,7 @@ public class MapFragment extends Fragment {
      * @param postController The controller for handling post operations
      * @param posts The list of posts to display on the map
      */
-    private MapFragment(NavigationController navigationController, PostController postController,
+    private MapFragment(NavigationControllerInterface navigationController, PostControllerInterface postController,
             List<Post> posts) {
         this.navigationController = navigationController;
         this.postController = postController;

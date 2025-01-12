@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.socialfood.R;
 import com.example.socialfood.controller.User.UserController;
+import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.model.entities.Comment;
 import com.example.socialfood.model.entities.User;
 
@@ -18,9 +19,9 @@ import java.util.List;
 
 public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.CommentViewHolder> {
     private List<Comment> comments;
-    private UserController userController;
+    private UserControllerInterface userController;
 
-    public CommentsAdapter(List<Comment> comments, UserController userController) {
+    public CommentsAdapter(List<Comment> comments, UserControllerInterface userController) {
         this.comments = comments;
         this.userController = userController;
     }

@@ -24,7 +24,9 @@ import com.bumptech.glide.Glide;
 import com.example.socialfood.R;
 
 import com.example.socialfood.controller.Navigation.NavigationController;
+import com.example.socialfood.controller.Navigation.NavigationControllerInterface;
 import com.example.socialfood.controller.Post.PostController;
+import com.example.socialfood.controller.Post.PostControllerInterface;
 import com.example.socialfood.databinding.FragmentPostCreationBinding;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -36,12 +38,12 @@ import java.util.List;
 public class PostCreationFragment extends Fragment {
     private FragmentPostCreationBinding binding;
     private String photoPath;
-    private PostController postController;
-    private NavigationController navigationController;
+    private PostControllerInterface postController;
+    private NavigationControllerInterface navigationController;
     private static final String ARG_PHOTO_PATH = "photo_path";
 
-    public static PostCreationFragment newInstance(String photoPath, PostController postController,
-            NavigationController navigationController) {
+    public static PostCreationFragment newInstance(String photoPath, PostControllerInterface postController,
+            NavigationControllerInterface navigationController) {
         PostCreationFragment fragment = new PostCreationFragment();
         fragment.photoPath = photoPath;
         fragment.postController = postController;
