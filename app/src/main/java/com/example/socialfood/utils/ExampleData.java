@@ -1,17 +1,14 @@
 package com.example.socialfood.utils;
 
 import com.example.socialfood.R;
-import com.example.socialfood.controller.Post.PostController;
 import com.example.socialfood.controller.Post.PostControllerInterface;
-import com.example.socialfood.controller.User.UserController;
 import com.example.socialfood.controller.User.UserControllerInterface;
 import com.example.socialfood.model.entities.User;
 
 public class ExampleData {
 
     public static void populateDatabase(PostControllerInterface postController,
-                                        UserControllerInterface userController) {
-
+            UserControllerInterface userController) {
 
         // Test User 1 (Main)
         User user1 = new User();
@@ -56,28 +53,34 @@ public class ExampleData {
         userController.setCurrentUser(user1);
         createTestPost(postController, "Leckere Pizza",
                 "Pizza Rezept:\n1. Teig ausrollen\n2. Belegen\n3. Backen",
-                "- Mehl\n- Hefe\n- Tomaten\n- Käse", 52.4891, 13.5221);
+                "- Mehl\n- Hefe\n- Tomaten\n- Käse", 52.4891, 13.5221,
+                String.valueOf(R.drawable.pizza_new));
         createTestPost(postController, "Frischer Salat",
                 "Salat Rezept:\n1. Waschen\n2. Schneiden\n3. Anrichten",
-                "- Salat\n- Tomaten\n- Gurke", 52.4892, 13.5222);
+                "- Salat\n- Tomaten\n- Gurke", 52.4892, 13.5222,
+                String.valueOf(R.drawable.salat_new));
 
         // Posts für User 2
         userController.setCurrentUser(user2);
         createTestPost(postController, "Pasta Carbonara",
                 "Carbonara Rezept:\n1. Nudeln kochen\n2. Sauce machen\n3. Mischen",
-                "- Spaghetti\n- Eier\n- Speck", 52.4893, 13.5223);
+                "- Spaghetti\n- Eier\n- Speck", 52.4893, 13.5223,
+                String.valueOf(R.drawable.pasta_new));
         createTestPost(postController, "Burger",
                 "Burger Rezept:\n1. Patty formen\n2. Braten\n3. Zusammenbauen",
-                "- Hackfleisch\n- Brötchen\n- Salat", 52.4894, 13.5224);
+                "- Hackfleisch\n- Brötchen\n- Salat", 52.4894, 13.5224,
+                String.valueOf(R.drawable.burger_new));
 
         // Posts für User 3
         userController.setCurrentUser(user3);
         createTestPost(postController, "Smoothie Bowl",
                 "Bowl Rezept:\n1. Früchte mixen\n2. Toppings\n3. Dekorieren",
-                "- Banane\n- Beeren\n- Joghurt", 52.4895, 13.5225);
+                "- Banane\n- Beeren\n- Joghurt", 52.4895, 13.5225,
+                String.valueOf(R.drawable.smoothie_new));
         createTestPost(postController, "Sushi",
                 "Sushi Rezept:\n1. Reis kochen\n2. Rollen\n3. Schneiden",
-                "- Sushi Reis\n- Nori\n- Lachs", 52.4896, 13.5226);
+                "- Sushi Reis\n- Nori\n- Lachs", 52.4896, 13.5226,
+                String.valueOf(R.drawable.sushi_new));
 
         userController.setCurrentUser(user1);// Reset auf User 1
 
@@ -112,8 +115,7 @@ public class ExampleData {
 
     private static void createTestPost(PostControllerInterface postController,
             String description, String recipe,
-            String ingredients, double lat, double lon) {
-        String photoPath = String.valueOf(R.drawable.food);
+            String ingredients, double lat, double lon, String photoPath) {
         postController.createPost(photoPath, description, recipe, ingredients, lat, lon);
         try {
             Thread.sleep(100); // Pause zwischen Posts
